@@ -18,11 +18,15 @@ function Chat() {
 
     useEffect(() => {
         const asyncFn = async () => {
-            if (!localStorage.getItem("chat-app-user")) {
+            if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
                 navigate("/login")
             } else {
                 setCurrentUser(
-                    await JSON.parse(localStorage.getItem("chat-app-user"))
+                    await JSON.parse(
+                        localStorage.getItem(
+                            process.env.REACT_APP_LOCALHOST_KEY
+                        )
+                    )
                 )
                 setIsLoaded(true)
             }
