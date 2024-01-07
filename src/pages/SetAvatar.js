@@ -58,7 +58,9 @@ function SetAvatar() {
             const data = []
             for (let i = 0; i < 4; i++) {
                 const image = await axios.get(
-                    `${api}/${Math.round(Math.random() * 1000)}`
+                    `${api}/${Math.round(Math.random() * 1000)}?apikey=${
+                        process.env.KEY
+                    }`
                 )
                 const buffer = new Buffer(image.data)
                 data.push(buffer.toString("base64"))
