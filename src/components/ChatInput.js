@@ -12,7 +12,6 @@ export default function ChatInput({ handleSendMsg }) {
     }
 
     const handleEmojiClick = (emoji) => {
-        console.log(emoji)
         let message = msg
         message += emoji.emoji
         setMsg(message)
